@@ -1,9 +1,58 @@
 #!/bin/bash
 
 # Add ad-blocking hosts files in this array
-HOSTS=("http://adaway.org/hosts.txt" "http://winhelp2002.mvps.org/hosts.txt" "http://hosts-file.net/ad_servers.asp" "http://someonewhocares.org/hosts/hosts" "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext" "https://raw.githubusercontent.com/jorgicio/publicidad-chile/master/hosts.txt" "https://raw.githubusercontent.com/astrolince/hosty/master/hostyhosts.txt")
+HOSTS=(
+    "http://list.iblocklist.com/?list=ydxerpxkpcfqjaybcssw&fileformat=p2p&archiveformat=gz" #p2p
+    "http://list.iblocklist.com/?list=gyisgnzbhppbvsphucsw&fileformat=p2p&archiveformat=gz"
+    "http://list.iblocklist.com/?list=uwnukjqktoggdknzrhgh&fileformat=p2p&archiveformat=gz"
+    "http://list.iblocklist.com/?list=llvtlsjyoyiczbkjsxpf&fileformat=p2p&archiveformat=gz" #spyware
+    "http://list.iblocklist.com/?list=dgxtneitpuvgqqcpfulq&fileformat=p2p&archiveformat=gz" #ads
+    "http://list.iblocklist.com/?list=cwworuawihqvocglcoss&fileformat=p2p&archiveformat=gz" #badpeers
+    "http://list.iblocklist.com/?list=ghlzqtqxnzctvvajwwag&fileformat=p2p&archiveformat=gz" #webexploit
+    "http://list.iblocklist.com/?list=npkuuhuxcsllnhoamkvm&fileformat=p2p&archiveformat=gz" #malicious
+    "http://list.iblocklist.com/?list=mcvxsnihddgutbjfbghy&fileformat=p2p&archiveformat=gz" #spider
+    "http://list.iblocklist.com/?list=zbdlwrqkabxbcppvrnos&fileformat=p2p&archiveformat=gz" #drop-zombie
+    "https://www.malwaredomainlist.com/hostslist/hosts.txt" #malware
+    "https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt" #blocktracker
+    "https://fanboy.co.nz/fanboy-antifacebook.txt" #fb-track
+    "http://malwareurls.joxeankoret.com/normal.txt" #malware
+    "https://raw.githubusercontent.com/FadeMind/hosts.extras/master/SpotifyAds/hosts" #spotify-ads
+    "http://www.squirrelconspiracy.net/abp/facebook-privacy-list.txt" #fb-privacy
+    "http://list.iblocklist.com/lists/atma/atma" #atma
+    "http://list.iblocklist.com/lists/dchubad/hacker" #hacker
+    "http://list.iblocklist.com/lists/tbg/bogon" #bogon
+    "http://list.iblocklist.com/?list=cdmdbprvldivlqsaqjol&fileformat=p2p&archiveformat=gz" #verizon
+    "http://list.iblocklist.com/?list=grbtkzijgrowvobvessf&fileformat=p2p&archiveformat=gz" #at&t
+    "http://list.iblocklist.com/?list=czvaehmjpsnwwttrdoyl&fileformat=p2p&archiveformat=gz" #scanning for vulnerabilities and DDOS attacks
+    "https://easylist-downloads.adblockplus.org/fb_annoyances_newsfeed.txt" #fb-ads-newsfeed
+    "https://raw.githubusercontent.com/eladkarako/hosts.eladkarako.com/master/build/hosts_adblock.txt")
+
+     
 # Add AdBlock Plus rules files in this array
-RULES=("https://easylist-downloads.adblockplus.org/easylist.txt" "https://data.getadblock.com/filters/adblock_custom.txt" "https://easylist-downloads.adblockplus.org/easyprivacy.txt" "http://abp.mozilla-hispano.org/nauscopio/filtros.txt" "https://easylist-downloads.adblockplus.org/malwaredomains_full.txt" "https://adguard.com/en/filter-rules.html?id=2" "https://adguard.com/en/filter-rules.html?id=3" "https://adguard.com/en/filter-rules.html?id=9")
+RULES=("http://list.iblocklist.com/?list=ydxerpxkpcfqjaybcssw&fileformat=p2p&archiveformat=gz" #p2p
+    "http://list.iblocklist.com/?list=gyisgnzbhppbvsphucsw&fileformat=p2p&archiveformat=gz"
+    "http://list.iblocklist.com/?list=uwnukjqktoggdknzrhgh&fileformat=p2p&archiveformat=gz"
+    "http://list.iblocklist.com/?list=llvtlsjyoyiczbkjsxpf&fileformat=p2p&archiveformat=gz" #spyware
+    "http://list.iblocklist.com/?list=dgxtneitpuvgqqcpfulq&fileformat=p2p&archiveformat=gz" #ads
+    "http://list.iblocklist.com/?list=cwworuawihqvocglcoss&fileformat=p2p&archiveformat=gz" #badpeers
+    "http://list.iblocklist.com/?list=ghlzqtqxnzctvvajwwag&fileformat=p2p&archiveformat=gz" #webexploit
+    "http://list.iblocklist.com/?list=npkuuhuxcsllnhoamkvm&fileformat=p2p&archiveformat=gz" #malicious
+    "http://list.iblocklist.com/?list=mcvxsnihddgutbjfbghy&fileformat=p2p&archiveformat=gz" #spider
+    "http://list.iblocklist.com/?list=zbdlwrqkabxbcppvrnos&fileformat=p2p&archiveformat=gz" #drop-zombie
+    "https://www.malwaredomainlist.com/hostslist/hosts.txt" #malware
+    "https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt" #blocktracker
+    "https://fanboy.co.nz/fanboy-antifacebook.txt" #fb-track
+    "http://malwareurls.joxeankoret.com/normal.txt" #malware
+    "https://raw.githubusercontent.com/FadeMind/hosts.extras/master/SpotifyAds/hosts" #spotify-ads
+    "http://www.squirrelconspiracy.net/abp/facebook-privacy-list.txt" #fb-privacy
+    "http://list.iblocklist.com/lists/atma/atma" #atma
+    "http://list.iblocklist.com/lists/dchubad/hacker" #hacker
+    "http://list.iblocklist.com/lists/tbg/bogon" #bogon
+    "http://list.iblocklist.com/?list=cdmdbprvldivlqsaqjol&fileformat=p2p&archiveformat=gz" #verizon
+    "http://list.iblocklist.com/?list=grbtkzijgrowvobvessf&fileformat=p2p&archiveformat=gz" #at&t
+    "http://list.iblocklist.com/?list=czvaehmjpsnwwttrdoyl&fileformat=p2p&archiveformat=gz" #scanning for vulnerabilities and DDOS attacks
+    "https://easylist-downloads.adblockplus.org/fb_annoyances_newsfeed.txt" #fb-ads-newsfeed
+    "https://raw.githubusercontent.com/eladkarako/hosts.eladkarako.com/master/build/hosts_adblock.txt")
 # Set IP to redirect
 IP="0.0.0.0"
 
